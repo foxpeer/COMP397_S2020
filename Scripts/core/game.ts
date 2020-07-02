@@ -16,7 +16,9 @@
     assetManifest = [
         {id:"startButton", src:"./Assets/StartButton.png"},
         {id:"nextButton", src:"./Assets/NextButton.png"},
-        {id:"backButton", src:"./Assets/BackButton.png"}
+        {id:"backButton", src:"./Assets/BackButton.png"},
+        {id:"background", src:"./Assets/background.png"},
+        {id:"player", src:"./Assets/spaceship.png"}
     ];
 
     function Init() {
@@ -39,6 +41,7 @@
         createjs.Ticker.on("tick", Update);
 
         // Set up default game states -- State Machine
+        objects.Game.stage = stage;
         objects.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
         Main();
